@@ -25199,11 +25199,14 @@
 	        null,
 	        React.createElement(Nav, null),
 	        React.createElement(
-	            'h2',
-	            null,
-	            'Main Component'
-	        ),
-	        props.children
+	            'div',
+	            { className: 'row' },
+	            React.createElement(
+	                'div',
+	                { className: 'medium-6 large-4 small-centered columns' },
+	                props.children
+	            )
+	        )
 	    );
 	};
 
@@ -26907,23 +26910,23 @@
 /* 254 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 
 	var React = __webpack_require__(8);
 
 	var About = function About(props) {
 	    return React.createElement(
-	        'div',
+	        "div",
 	        null,
 	        React.createElement(
-	            'h3',
-	            null,
-	            'About '
+	            "h3",
+	            { className: "text-center" },
+	            "About "
 	        ),
 	        React.createElement(
-	            'p',
+	            "p",
 	            null,
-	            'Welcome to About Page'
+	            "Welcome to About Page"
 	        )
 	    );
 	};
@@ -26938,11 +26941,45 @@
 
 	var React = __webpack_require__(8);
 
+	var _require = __webpack_require__(166),
+	    Link = _require.Link;
+
 	var Example = function Example(props) {
 	    return React.createElement(
-	        'h3',
+	        'div',
 	        null,
-	        'Example'
+	        React.createElement(
+	            'h1',
+	            { className: 'text-center' },
+	            'Example'
+	        ),
+	        React.createElement(
+	            'p',
+	            null,
+	            'Here are few Example Locations to try out:'
+	        ),
+	        React.createElement(
+	            'ol',
+	            null,
+	            React.createElement(
+	                'li',
+	                null,
+	                React.createElement(
+	                    Link,
+	                    { to: '/?location=Peshawar' },
+	                    'Peshawar, PAK'
+	                )
+	            ),
+	            React.createElement(
+	                'li',
+	                null,
+	                React.createElement(
+	                    Link,
+	                    { to: '/?location=Lahore' },
+	                    'Lahore, PAK'
+	                )
+	            )
+	        )
 	    );
 	};
 
