@@ -5,7 +5,13 @@ var About =  (props)=>{
     return (
         <div>
             <h3 className="text-center">About </h3>
-            <p>Welcome to About Page</p>
+            <p>React Mosam is built using React and Foundation</p>
+            <p>Tools used:</p>
+            <ul>
+                <li>
+                    <a href="https://facebook.github.io/react">React</a>
+                </li>
+            </ul>
         </div>
         
     )

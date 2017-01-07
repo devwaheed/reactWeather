@@ -26926,7 +26926,25 @@
 	        React.createElement(
 	            "p",
 	            null,
-	            "Welcome to About Page"
+	            "React Mosam is built using React and Foundation"
+	        ),
+	        React.createElement(
+	            "p",
+	            null,
+	            "Tools used:"
+	        ),
+	        React.createElement(
+	            "ul",
+	            null,
+	            React.createElement(
+	                "li",
+	                null,
+	                React.createElement(
+	                    "a",
+	                    { href: "https://facebook.github.io/react" },
+	                    "React"
+	                )
+	            )
 	        )
 	    );
 	};
