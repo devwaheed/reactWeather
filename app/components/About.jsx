@@ -11,6 +11,7 @@ var About =  (props)=>{
                 <li>
                     <a href="https://facebook.github.io/react">React</a>
                 </li>
+                
             </ul>
         </div>
         
