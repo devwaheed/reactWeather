@@ -25230,7 +25230,12 @@
 
 	    onSearch: function onSearch(e) {
 	        e.preventDefault();
-	        alert('not implimented');
+	        var location = this.refs.location.value;
+	        var encodedLocation = encodeURIComponent(location);
+	        if (location.length > 0) {
+	            this.refs.location.value = '';
+	            window.location.hash = '#/?location=' + encodedLocation;
+	        }
 	    },
 	    render: function render() {
 	        return React.createElement(
@@ -25288,7 +25293,7 @@
 	                        React.createElement(
 	                            'li',
 	                            null,
-	                            React.createElement('input', { type: 'search', placeholder: 'Search Weather' })
+	                            React.createElement('input', { ref: 'location', type: 'search', placeholder: 'Search Weather' })
 	                        ),
 	                        React.createElement(
 	                            'li',
@@ -25331,7 +25336,9 @@
 	    handleSearch: function handleSearch(location) {
 	        this.setState({
 	            isLoading: true,
-	            errorMessage: undefined
+	            errorMessage: undefined,
+	            location: undefined,
+	            temp: undefined
 	        });
 	        var self = this;
 	        WeatherAPI.getTemp(location).then(function (temp) {
@@ -25346,6 +25353,22 @@
 	                errorMessage: e.message
 	            });
 	        });
+	    },
+	    componentDidMount: function componentDidMount() {
+	        var location = this.props.location.query.location;
+
+	        if (location && location.length > 0) {
+	            this.handleSearch(location);
+	            window.location.hash = '#/';
+	        }
+	    },
+	    componentWillReceiveProps: function componentWillReceiveProps(newProps) {
+	        var location = newprops.location.query.location;
+
+	        if (location && location.length > 0) {
+	            this.handleSearch(location);
+	            window.location.hash = '#/';
+	        }
 	    },
 	    render: function render() {
 	        var _state = this.state,
@@ -27460,7 +27483,7 @@
 
 
 	// module
-	exports.push([module.id, ".page-title{\r\n    margin-top: 2.5rem;\r\n    margin-bottom: 2.5rem;\r\n}\r\n\r\ninput[type=search]{\r\n    box-shadow: none;\r\n}", ""]);
+	exports.push([module.id, ".page-title{\r\n    color:#555;\r\n    margin-top: 2.5rem;\r\n    margin-bottom: 2.5rem;\r\n}\r\n\r\ninput[type=search]{\r\n    box-shadow: none;\r\n}", ""]);
 
 	// exports
 

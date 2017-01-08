@@ -10,12 +10,10 @@ var About =  (props)=>{
             <ul>
                 <li>
                     <a href="https://facebook.github.io/react">React</a>
-                </li>
-                
+                </li>  
             </ul>
-        </div>
-        
-    )
+        </div>       
+    );
 }
 
 module.exports = About;
