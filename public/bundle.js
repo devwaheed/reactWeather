@@ -25363,7 +25363,7 @@
 	        }
 	    },
 	    componentWillReceiveProps: function componentWillReceiveProps(newProps) {
-	        var location = newprops.location.query.location;
+	        var location = newProps.location.query.location;
 
 	        if (location && location.length > 0) {
 	            this.handleSearch(location);
